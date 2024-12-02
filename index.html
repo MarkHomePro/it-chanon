@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/output.css">
     <title>IT World</title>
 </head>
-<body class="bg-gray-100 text-gray-800"> <!-- ใส่สีพื้นหลังและข้อความ -->
+<body class="bg-gray-100 text-gray-800">
 
     <!-- ส่วน Navigation bar -->
     <header class="bg-blue-600 text-white py-4">
@@ -16,19 +16,29 @@
             </div>
 
             <!-- ส่วนของ Navigation menus -->
-            <nav class="flex space-x-6">
-                <a href="" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Home</a>
-                <a href="" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">About</a>
-                <a href="" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Product</a>
-                <a href="" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Contact</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Home</a>
+                <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">About</a>
+                <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Product</a>
+                <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 py-4 rounded transition duration-300">Contact</a>
             </nav>
 
-            <!-- ปุ่ม Hamberger menu -->
-            <button class="hidden">
-                Hamberger
+            <!-- ปุ่ม Hamburger menu สำหรับมือถือ -->
+            <button class="md:hidden text-white" id="hamburger">
+                &#9776;
             </button>
         </div>
     </header>
+
+    <!-- ส่วนของ Hamburger Menu สำหรับมือถือ -->
+    <div id="hamburger-menu" class="md:hidden bg-blue-600 text-white py-4 hidden">
+        <nav class="flex flex-col space-y-4 px-6">
+            <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 rounded transition duration-300">Home</a>
+            <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 rounded transition duration-300">About</a>
+            <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 rounded transition duration-300">Product</a>
+            <a href="#" class="hover:bg-blue-300 hover:text-blue-900 px-4 rounded transition duration-300">Contact</a>
+        </nav>
+    </div>
 
     <!-- Carousel -->
     <section class="container mx-auto px-6 my-8">
@@ -42,6 +52,52 @@
             </div>
         </div>
     </section>
+
+    <!-- Section for Cards -->
+    <section class="container mx-auto px-6 my-8">
+        <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="images/earp-1.png" alt="Earphones" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Wireless Earphones</h3>
+                <p class="text-gray-600 mt-2">High-quality wireless earphones with noise cancellation.</p>
+                <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">Learn More</button>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="images/earp-2.png" alt="Earphones" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">Bluetooth Headset</h3>
+                <p class="text-gray-600 mt-2">Comfortable Bluetooth headset with superior sound quality.</p>
+                <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">Learn More</button>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="images/micro.png" alt="Microphone" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold">High-Quality Microphone</h3>
+                <p class="text-gray-600 mt-2">Perfect microphone for clear and crisp audio recording.</p>
+                <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 IT World. All rights reserved.</p>
+            <p class="mt-2">Follow us on social media for the latest updates!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle hamburger menu visibility
+        const hamburgerButton = document.getElementById('hamburger');
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        
+        hamburgerButton.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
